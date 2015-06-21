@@ -52,7 +52,7 @@ local function loadStory(id, filepath)
                     line = line:sub(tag:len() + 1);
 
                     -- Store line using the tag as a key after removing the < and > symbols.
-                    tag = tag:gsub("[<>]", "");
+                    tag = tag:gsub('[<>]', '');
                     file[tag] = line;
 
                     hasTag = true;
@@ -69,7 +69,7 @@ local function loadStory(id, filepath)
 
         return file;
     else
-        print(string.format("Can't read story from %s.", filepath));
+        print(string.format('Can\'t read story from %s.', filepath));
     end
 end
 
