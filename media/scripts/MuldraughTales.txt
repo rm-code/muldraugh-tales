@@ -240,7 +240,7 @@ module MuldraughTales
         Weight                      =   0.1,
     }
 
-    item Polaroid1
+    item Polaroid
     {
         DisplayName                 =   Polaroid,
         Icon                        =   twiggy_polaroid,

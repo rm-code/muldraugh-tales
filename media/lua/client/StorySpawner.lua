@@ -21,7 +21,7 @@ local function spawnStory(story, container)
     elseif story.type == TYPE_FLYER then
         itemType = MOD_MODULE .. TYPE_FLYER  .. (ZombRand(MAX_FLYERS)  + 1);
     elseif story.type == TYPE_PHOTO then
-        itemType = MOD_MODULE .. TYPE_PHOTO  .. '1'; 
+        itemType = MOD_MODULE .. TYPE_PHOTO; 
     end
 
     -- Create the item and store the story's id in its modData.
