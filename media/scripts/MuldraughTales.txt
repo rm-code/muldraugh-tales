@@ -1,9 +1,249 @@
 module MuldraughTales
 {
-    item Note
+    item Note1
     {
         DisplayName                 =   Note,
         Icon                        =   nk_note_bright,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Note2
+    {
+        DisplayName                 =   Note,
+        Icon                        =   nk_note2,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Note3
+    {
+        DisplayName                 =   Note,
+        Icon                        =   nk_note2_bloody,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Note4
+    {
+        DisplayName                 =   Note,
+        Icon                        =   nk_note2_bloody2,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Note5
+    {
+        DisplayName                 =   Note,
+        Icon                        =   nk_note2_txt,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Note6
+    {
+        DisplayName                 =   Note,
+        Icon                        =   nk_note2_txt_bloody,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Note7
+    {
+        DisplayName                 =   Note,
+        Icon                        =   nk_note2_txt_bloody2,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Note8
+    {
+        DisplayName                 =   Note,
+        Icon                        =   nk_note3,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Note9
+    {
+        DisplayName                 =   Note,
+        Icon                        =   nk_note3_txt,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Note10
+    {
+        DisplayName                 =   Note,
+        Icon                        =   nk_note3_txt_bloody,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Note11
+    {
+        DisplayName                 =   Note,
+        Icon                        =   nk_note3_txt_bloody2,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Letter1
+    {
+        DisplayName                 =   Crumpled Letter,
+        Icon                        =   nk_envelope,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Letter2
+    {
+        DisplayName                 =   Letter,
+        Icon                        =   nk_envelope1,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Letter3
+    {
+        DisplayName                 =   Bloody Letter,
+        Icon                        =   nk_envelope1_bloody,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Letter4
+    {
+        DisplayName                 =   Letter,
+        Icon                        =   nk_envelope2,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Letter5
+    {
+        DisplayName                 =   Bloody Letter,
+        Icon                        =   nk_envelope2_bloody,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Letter6
+    {
+        DisplayName                 =   Letter,
+        Icon                        =   nk_envelope3,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Letter7
+    {
+        DisplayName                 =   Letter,
+        Icon                        =   nk_envelope4,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Letter8
+    {
+        DisplayName                 =   Bloody Letter,
+        Icon                        =   nk_envelope4_bloody,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Flyer1
+    {
+        DisplayName                 =   Flyer,
+        Icon                        =   nk_flyer1,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Flyer2
+    {
+        DisplayName                 =   Flyer,
+        Icon                        =   nk_flyer1_bloody,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Flyer3
+    {
+        DisplayName                 =   Flyer,
+        Icon                        =   nk_flyer1_bloody2,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Flyer4
+    {
+        DisplayName                 =   Flyer,
+        Icon                        =   nk_flyer2,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Flyer5
+    {
+        DisplayName                 =   Flyer,
+        Icon                        =   nk_flyer2_bloody,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Flyer6
+    {
+        DisplayName                 =   Flyer,
+        Icon                        =   nk_flyer3,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Flyer7
+    {
+        DisplayName                 =   Flyer,
+        Icon                        =   nk_flyer3_bloody,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Flyer8
+    {
+        DisplayName                 =   Flyer,
+        Icon                        =   nk_flyer4,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Flyer9
+    {
+        DisplayName                 =   Flyer,
+        Icon                        =   nk_flyer4_bloody,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Flyer10
+    {
+        DisplayName                 =   Flyer,
+        Icon                        =   nk_flyer4_bloody2,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Flyer11
+    {
+        DisplayName                 =   Flyer,
+        Icon                        =   nk_flyer4_bloody3,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+
+    item Polaroid1
+    {
+        DisplayName                 =   Polaroid,
+        Icon                        =   twiggy_polaroid,
         Type                        =   Normal,
         Weight                      =   0.1,
     }
