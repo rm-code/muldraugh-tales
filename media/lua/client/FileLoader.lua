@@ -1,6 +1,10 @@
+FileLoader = {};
+
 local STORY_TAGS = { '<title>', '<type>', '<x>', '<y>', '<z>' };
 local MOD_ID = 'RMMuldraughTales';
 local STORY_LIST = 'StoryList.txt';
+
+local stories;
 
 local function getStoryList(id, path)
     local reader = getModFileReader(id, path, false);
@@ -89,4 +93,12 @@ local function loadStories()
     return stories;
 end
 
-Events.OnGameBoot.Add(loadStories);
+local function init()
+    stories = loadStories();
+end
+
+function FileLoader.getStories()
+    return stories;
+end
+
+Events.OnGameBoot.Add(init);

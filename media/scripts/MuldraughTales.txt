@@ -1,0 +1,10 @@
+module MuldraughTales
+{
+    item Note
+    {
+        DisplayName                 =   Note,
+        Icon                        =   nk_note_bright,
+        Type                        =   Normal,
+        Weight                      =   0.1,
+    }
+}
