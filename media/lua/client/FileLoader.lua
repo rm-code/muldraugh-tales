@@ -67,6 +67,11 @@ local function loadStory(id, filepath)
 
         print(string.format('Loaded: %s', filepath));
 
+        -- Convert coordinates from string to number.
+        file.x = tonumber(file.x);
+        file.y = tonumber(file.y);
+        file.z = tonumber(file.z);
+
         return file;
     else
         print(string.format('Can\'t read story from %s.', filepath));
