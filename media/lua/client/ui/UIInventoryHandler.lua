@@ -2,6 +2,16 @@ require('TimedActions/ISTimedActionQueue');
 require('StoryHandling/StoryLoader');
 require('UI/UIStoryManager');
 
+-- ------------------------------------------------
+-- Local Functions
+-- ------------------------------------------------
+
+---
+-- @param items   - A table containing the clicked items / stack.
+-- @param player  - The player who clicked the menu.
+-- @param content - The story's text body.
+-- @param title   - The story's title.
+--
 local function onReadNote(items, player, content, title)
     local panel = UIStoryPanel:new(title, content);
     panel:initialise();
@@ -17,7 +27,6 @@ local function createMenu(player, context, items)
     player = getSpecificPlayer(player);
 
     if #items == 1 then -- We have either one clicked item or a folded stack of items.
-
         -- We iterate through the table of clicked items. We have
         -- to seperate between single items and folded
         for _, clickedItem in ipairs(items) do
@@ -75,5 +84,9 @@ local function createMenu(player, context, items)
         end
     end
 end
+
+-- ------------------------------------------------
+-- Events
+-- ------------------------------------------------
 
 Events.OnPreFillInventoryObjectContextMenu.Add(createMenu);

@@ -2,7 +2,15 @@ require('ISUI/ISPanel');
 require('ISUI/ISRichTextPanel');
 require('ISUI/ISButton');
 
+-- ------------------------------------------------
+-- Module
+-- ------------------------------------------------
+
 UIStoryPanel = ISPanel:derive('UIStoryPanel');
+
+-- ------------------------------------------------
+-- Constants
+-- ------------------------------------------------
 
 local CORE = getCore();
 local SCREEN_W = CORE:getScreenWidth();
@@ -15,6 +23,9 @@ local PANEL_H = 600;
 local PANEL_POS_X = SCREEN_W * 0.5 - PANEL_W * 0.5;
 local PANEL_POS_Y = SCREEN_H * 0.5 - PANEL_H * 0.5;
 
+-- ------------------------------------------------
+-- Local Functions
+-- ------------------------------------------------
 
 local function update()
     SCREEN_W = CORE:getScreenWidth();
@@ -26,13 +37,17 @@ local function update()
     print("Updated values for UIStoryPanel");
 end
 
+-- ------------------------------------------------
+-- Public Functions
+-- ------------------------------------------------
+
 function UIStoryPanel:initialise()
     ISPanel.initialise(self);
 end
 
 ---
--- @param _title
--- @param _text
+-- @param title
+-- @param text
 --
 function UIStoryPanel:new(title, text)
     -- Create a rich text panel which will display the story's text.
@@ -74,5 +89,9 @@ function UIStoryPanel:new(title, text)
 
     return colBox;
 end
+
+-- ------------------------------------------------
+-- Events
+-- ------------------------------------------------
 
 Events.OnResolutionChange.Add(update);

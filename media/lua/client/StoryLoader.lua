@@ -1,11 +1,29 @@
 StoryLoader = {};
 
+-- ------------------------------------------------
+-- Constants
+-- ------------------------------------------------
+
 local STORY_TAGS = { '<title>', '<type>', '<x>', '<y>', '<z>' };
 local MOD_ID = 'RMMuldraughTales';
 local STORY_LIST = 'StoryList.txt';
 
+-- ------------------------------------------------
+-- Local Variables
+-- ------------------------------------------------
+
 local stories;
 
+-- ------------------------------------------------
+-- Local Functions
+-- ------------------------------------------------
+
+---
+-- Loads all story paths from a file and returns them in a sequence.
+--
+-- @param id - The mod id.
+-- @param path - The path from which to load the file.
+--
 local function getStoryList(id, path)
     local reader = getModFileReader(id, path, false);
     if reader then
@@ -27,6 +45,14 @@ local function getStoryList(id, path)
     end
 end
 
+---
+-- Loads a story and detects tags. Tags will be stored in the table using the
+-- tag as a key (i.e. table.tag == foo). The text body of the story is stored
+-- under the 'content' key.
+--
+-- @param id - The mod id.
+-- @param filepath - The path from which to load a story.
+--
 local function loadStory(id, filepath)
     local reader = getModFileReader(id, filepath, false);
 
@@ -82,6 +108,10 @@ local function loadStory(id, filepath)
     end
 end
 
+---
+-- This function reads the list in which the paths of all stories to load are
+-- contained. It then proceeds to load all stories and returns them in a table.
+--
 local function loadStories()
     local list = getStoryList(MOD_ID, STORY_LIST);
     local stories = {};
@@ -93,12 +123,23 @@ local function loadStories()
     return stories;
 end
 
+---
+-- Loads all stories we need and stores them in the local 'stories' table.
+--
 local function init()
     stories = loadStories();
 end
 
+-- ------------------------------------------------
+-- Getters
+-- ------------------------------------------------
+
 function StoryLoader.getStories()
     return stories;
 end
+
+-- ------------------------------------------------
+-- Events
+-- ------------------------------------------------
 
 Events.OnGameBoot.Add(init);
