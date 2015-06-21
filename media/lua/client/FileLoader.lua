@@ -1,9 +1,29 @@
 local STORY_TAGS = { '<title>', '<type>', '<x>', '<y>', '<z>' };
 local MOD_ID = 'RMMuldraughTales';
-local STORY_FOLDER = '/stories/'
+local STORY_LIST = 'Stories.txt';
 
-local function loadStory(id, filename)
-    local filepath = STORY_FOLDER .. filename;
+local function getStoryList(id, path)
+    local reader = getModFileReader(id, path, false);
+    if reader then
+        local list = {};
+
+        while true do
+            line = reader:readLine();
+
+            -- Checks if EOF is reached.
+            if not line then
+                reader:close();
+                break;
+            end
+
+            list[#list + 1] = line;
+        end
+
+        return list;
+    end
+end
+
+local function loadStory(id, filepath)
     local reader = getModFileReader(id, filepath, false);
 
     if reader then
@@ -45,6 +65,8 @@ local function loadStory(id, filename)
             end
         end
 
+        print(string.format('Loaded: %s', filepath);
+
         return file;
     else
         print(string.format("Can't read story from %s.", filepath));
@@ -52,10 +74,14 @@ local function loadStory(id, filename)
 end
 
 local function loadStories()
-    local file = loadStory(MOD_ID, 'Test.txt');
-    print(file.title);
-    print(file.x, file.y, file.z);
-    print(file.content);
+    local list = getStoryList(MOD_ID, STORY_LIST);
+    local stories = {};
+
+    for i = 1, #list do
+        stories[#stories + 1] = loadStory(MOD_ID, list[i]);
+    end
+
+    return stories;
 end
 
 Events.OnGameBoot.Add(loadStories);
