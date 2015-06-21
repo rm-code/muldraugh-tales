@@ -1,4 +1,4 @@
-local STORY_TAGS = { '<title>', '<x>', '<y>', '<z>' };
+local STORY_TAGS = { '<title>', '<type>', '<x>', '<y>', '<z>' };
 local MOD_ID = 'RMMuldraughTales';
 local STORY_FOLDER = '/stories/'
 
