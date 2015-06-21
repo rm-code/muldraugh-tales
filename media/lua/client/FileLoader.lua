@@ -1,6 +1,6 @@
 local STORY_TAGS = { '<title>', '<type>', '<x>', '<y>', '<z>' };
 local MOD_ID = 'RMMuldraughTales';
-local STORY_LIST = 'Stories.txt';
+local STORY_LIST = 'StoryList.txt';
 
 local function getStoryList(id, path)
     local reader = getModFileReader(id, path, false);
