@@ -1,4 +1,4 @@
-require('FileLoader');
+require('StoryLoader');
 
 local MOD_MODULE = 'MuldraughTales.';
 
@@ -19,7 +19,7 @@ local function spawnSpecificStories(room, containerType, container)
     local y = container:getSourceGrid():getY();
     local z = container:getSourceGrid():getZ();
 
-    local stories = FileLoader.getStories();
+    local stories = StoryLoader.getStories();
     for i = 1, #stories do
         local story = stories[i];
         if story.x == x and story.y == y and story.z == z then

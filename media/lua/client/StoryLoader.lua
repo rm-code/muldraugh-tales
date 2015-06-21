@@ -1,4 +1,4 @@
-FileLoader = {};
+StoryLoader = {};
 
 local STORY_TAGS = { '<title>', '<type>', '<x>', '<y>', '<z>' };
 local MOD_ID = 'RMMuldraughTales';
@@ -97,7 +97,7 @@ local function init()
     stories = loadStories();
 end
 
-function FileLoader.getStories()
+function StoryLoader.getStories()
     return stories;
 end
 
