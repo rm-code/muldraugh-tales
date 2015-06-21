@@ -65,7 +65,7 @@ local function loadStory(id, filepath)
             end
         end
 
-        print(string.format('Loaded: %s', filepath);
+        print(string.format('Loaded: %s', filepath));
 
         return file;
     else
