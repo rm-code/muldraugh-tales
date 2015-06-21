@@ -32,7 +32,7 @@ local function loadStory(id, filename)
                     line = line:sub(tag:len() + 1);
 
                     -- Store line using the tag as a key after removing the < and > symbols.
-                    tag = tag:gsub("[<>]", "")
+                    tag = tag:gsub("[<>]", "");
                     file[tag] = line;
 
                     hasTag = true;
