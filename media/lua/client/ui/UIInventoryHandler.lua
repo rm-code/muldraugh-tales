@@ -13,9 +13,7 @@ require('UI/UIStoryManager');
 -- @param title   - The story's title.
 --
 local function onReadNote(items, player, content, title)
-    local panel = UIStoryPanel:new(title, content);
-    panel:initialise();
-    panel:addToUIManager();
+    UIStoryPanel.new(title, content);
 end
 
 ---
