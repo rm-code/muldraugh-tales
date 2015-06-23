@@ -91,7 +91,7 @@ local function loadStory(id, filepath)
             end
 
             if not hasTag then
-                file.content = file.content .. '\n' .. line;
+                file.content = file.content .. ' <LINE> ' .. line;
             end
         end
 

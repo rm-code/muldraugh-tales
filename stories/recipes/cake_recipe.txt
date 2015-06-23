@@ -3,7 +3,17 @@
 <x>10698
 <y>9405
 <z>0
-<TEXT>Tim, <BR> be so nice and fetch me this stuff from the Zippee Market, when you get back home from school: <BR>
-- Flour <LINE> - Butter <LINE> - Sugar <LINE> - Egg <LINE> - Yeast <LINE> - Milk (don't take the cheap one) <BR>
-Gonna bake a nice cake as a reward for you ;) <BR>
-Love, <LINE> Mom
+<TEXT> Tim,
+be so nice and fetch me this stuff from the Zippee Market, when you get back home from school:
+
+- Flour
+- Butter
+- Sugar
+- Egg
+- Yeast
+- Milk (don't take the cheap one)
+
+Gonna bake a nice cake as a reward for you ;)
+
+Love,
+Mom
