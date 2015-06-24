@@ -45,6 +45,11 @@ local function spawnStory(story, container)
     local modData = item:getModData();
     modData.storyContent = story.content;
     modData.title = story.title;
+
+    -- Spawn story related items.
+    for item, amount in pairs(story.items) do
+        container:AddItems(item, amount);
+    end
 end
 
 ---

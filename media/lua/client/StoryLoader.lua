@@ -4,7 +4,7 @@ StoryLoader = {};
 -- Constants
 -- ------------------------------------------------
 
-local STORY_TAGS = { '<title>', '<type>', '<x>', '<y>', '<z>' };
+local STORY_TAGS = { '<title>', '<type>', '<items>', '<x>', '<y>', '<z>' };
 local MOD_ID = 'RMMuldraughTales';
 local STORY_LIST = 'StoryList.txt';
 
@@ -17,6 +17,21 @@ local stories;
 -- ------------------------------------------------
 -- Local Functions
 -- ------------------------------------------------
+
+---
+-- Splits the item tag into a usable format. Items need to be saved in
+-- the format [Module.Item, amountToSpawn].
+--
+-- @param str - The item string to process.
+--
+local function parseItems(str)
+    local items = {};
+    for snippet in string.gmatch(str, '%[.-]') do
+        local item, amount = snippet:match('([^%[^,]+),([^,^%]]+)'); -- Remove brackets and split at comma.
+        items[item] = items[item] and items[item] + tonumber(amount) or tonumber(amount);
+    end
+    return items;
+end
 
 ---
 -- Loads all story paths from a file and returns them in a sequence.
@@ -101,6 +116,11 @@ local function loadStory(id, filepath)
         file.x = tonumber(file.x);
         file.y = tonumber(file.y);
         file.z = tonumber(file.z);
+
+        -- Replace items string with a table containing the actual spawn infos.
+        if file.items then
+            file.items = parseItems(file.items);
+        end
 
         return file;
     else
