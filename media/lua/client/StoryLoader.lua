@@ -28,7 +28,8 @@ local function parseItems(str)
     local items = {};
     for snippet in string.gmatch(str, '%[.-]') do
         local item, amount = snippet:match('([^%[^,]+),([^,^%]]+)'); -- Remove brackets and split at comma.
-        items[item] = items[item] and items[item] + tonumber(amount) or tonumber(amount);
+        amount = tonumber(amount); -- We need an explicit type conversion to make it work with the Java side.
+        items[item] = items[item] and items[item] + amount or amount;
     end
     return items;
 end
