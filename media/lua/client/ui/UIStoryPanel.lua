@@ -6,25 +6,25 @@ UIStoryPanel = {};
 
 function UIStoryPanel.new(title, text)
     local self = {};
-    self.tut = ISRichTextPanel:new(0, 0, 500, 500);
-    self.tut:initialise();
-    self.tut:setAnchorBottom(true);
-    self.tut:setAnchorRight(true);
-    self.moreinfo = self.tut:wrapInCollapsableWindow();
-    self.moreinfo:setX((getCore():getScreenWidth() * 0.5) - (self.tut.width * 0.5));
-    self.moreinfo:setY((getCore():getScreenHeight() * 0.5) - (self.tut.height * 0.5));
-    self.moreinfo:setTitle(title);
+    self.richtext = ISRichTextPanel:new(0, 0, 500, 500);
+    self.richtext:initialise();
+    self.richtext:setAnchorBottom(true);
+    self.richtext:setAnchorRight(true);
+    self.wrapped = self.richtext:wrapInCollapsableWindow();
+    self.wrapped:setX((getCore():getScreenWidth() * 0.5) - (self.richtext.width * 0.5));
+    self.wrapped:setY((getCore():getScreenHeight() * 0.5) - (self.richtext.height * 0.5));
+    self.wrapped:setTitle(title);
 
-    self.moreinfo:addToUIManager();
-    self.tut:setWidth(self.moreinfo:getWidth());
-    self.tut:setHeight(self.moreinfo:getHeight() - 16);
-    self.tut:setY(16);
-    self.tut.autosetheight = false;
-    self.tut.clip = true;
-    self.tut:addScrollBars();
+    self.wrapped:addToUIManager();
+    self.richtext:setWidth(self.wrapped:getWidth());
+    self.richtext:setHeight(self.wrapped:getHeight() - 16);
+    self.richtext:setY(16);
+    self.richtext.autosetheight = false;
+    self.richtext.clip = true;
+    self.richtext:addScrollBars();
 
-    self.tut.textDirty = true;
-    self.tut.text = text;
-    self.tut:paginate();
+    self.richtext.textDirty = true;
+    self.richtext.text = text;
+    self.richtext:paginate();
     return self;
 end
